@@ -1,0 +1,668 @@
+/* =========================
+   RESET
+========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+
+/* =========================
+   BODY
+========================= */
+body {
+    background: #f5f1eb;
+    color: #3e2c23;
+}
+
+/* garante que o conteúdo fique organizado */
+.box {
+    width: 100%;
+    max-width: 400px;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background: #111;
+    color: #c6a96b;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* LOGO */
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-area img {
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    border: 2px solid #c6a96b;
+}
+
+/* =========================
+   MENU
+========================= */
+.container-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+}
+
+/* NAV */
+.container-menu nav {
+    display: flex;
+    gap: 25px;
+}
+
+/* LINKS */
+nav a {
+    color: #e8dfd6;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav a::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background: #c6a96b;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    transition: 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* MENU DIREITA */
+.menu {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.menu a {
+    color: #e8dfd6;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background: rgba(198, 169, 107, 0.2);
+    color: #ffffff;
+}
+
+/* =========================
+   BOTÕES
+========================= */
+button, .btn {
+    background: linear-gradient(145deg, #c6a96b, #a8894f);
+    color: #111;
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+button:hover, .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+/* =========================
+   DESTAQUE
+========================= */
+.destaque {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px;
+    background: linear-gradient(120deg, #6b4f3a, #3e2c23);
+    color: #f5f1eb;
+}
+
+.destaque img {
+    width: 130px;
+    border-radius: 50%;
+    border: 3px solid #c6a96b;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* =========================
+   TITULOS
+========================= */
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #221c19;
+}
+
+h2::after {
+    content: "";
+    width: 60px;
+    height: 3px;
+    background: #c6a96b;
+    display: block;
+    margin-top: 8px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+section {
+    padding: 50px;
+}
+
+/* =========================
+   CARDS
+========================= */
+.card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    transition: 0.4s;
+    border: 1px solid #e8dfd6;
+    animation: fadeIn 0.6s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* IMAGEM CARD */
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 10px;
+    
+}
+
+
+.card img:hover {
+    transform: scale(1.05);
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+/* =========================
+   FORM / INPUTS
+========================= */
+input, textarea, select {
+    width: 100%;
+    padding: 12px 15px;
+    border-radius: 30px;
+    border: 1px solid #ddd;
+    background: #fff;
+    margin: 10px 0;
+}
+
+input:focus {
+    border-color: #c6a96b;
+    outline: none;
+}
+
+/* SEARCH */
+.search-box {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-box input {
+    flex: 1;
+}
+
+/* =========================
+   SIGNO
+========================= */
+.Signo {
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    margin: auto;
+    border: 1px solid #e8dfd6;
+}
+
+/* =========================
+   CLIMA
+========================= */
+/* ===== CLIMA COMPACTO E MODERNO ===== */
+
+.clima-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    max-width: 450px;   /* diminui MUITO o tamanho */
+    margin: 20px auto;
+
+    padding: 12px 18px; /* menos espaço interno */
+
+    border-radius: 16px;
+
+    background: linear-gradient(120deg, #a89a8e, #3e2c23);
+    color: #f5f1eb;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+
+    gap: 10px;
+}
+
+/* CADA BLOCO DO CLIMA */
+.clima-box {
+    flex: 1;
+    text-align: center;
+}
+
+/* TÍTULO MENOR */
+.clima-box h3 {
+    font-size: 12px;
+    color: #c6a96b;
+    margin-bottom: 4px;
+}
+
+/* TEXTO MENOR */
+.clima-box p {
+    font-size: 13px;
+}
+
+/* ÍCONES (SE TIVER) */
+.clima-box img {
+    width: 30px;
+    height: 30px;
+}
+
+/* HOVER SUAVE */
+.clima-container:hover {
+    transform: translateY(-2px);
+    transition: 0.3s;
+}
+
+/* =========================
+   RODAPÉ
+========================= */
+.rodape {
+    background: #111;
+    color: #c6a96b;
+    text-align: center;
+    padding: 25px;
+}
+
+/* =========================
+   BOTÃO VOLTAR
+========================= */
+.btn-voltar {
+    background: #3e2c23;
+    color: #f5f1eb;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+.btn-voltar:hover {
+    background: #6b4f3a;
+}
+
+/* =========================
+   ANIMAÇÃO
+========================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .destaque {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .clima-container {
+        flex-direction: column;
+    }
+}
+
+/* =========================
+   MODO ESCURO
+========================= */
+
+body.dark {
+    background: #504a4a;
+    color: #eee;
+}
+
+body.dark .card,
+body.dark .form-container {
+    background: #2a2a2a;
+    color: white;
+}
+
+body.dark header {
+    background: #000;
+}
+
+body.dark input,
+body.dark textarea {
+    background: #333;
+    color: white;
+    border: 1px solid #555;
+}
+
+body.dark form{
+    background: #333;
+    
+}
+
+body.dark .btn,
+body.dark button {
+    background: #dba735;
+    color: black;
+}
+
+body.dark .clima-container {
+    background: #2a2a2a;
+}
+
+body.dark .rodape {
+    background: #000;
+}
+
+body.dark .Signo {
+    background: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+body.dark .clima-container {
+    background: #2a2a2a;
+    color: #fff;
+}
+
+body.dark input,
+body.dark textarea,
+body.dark select {
+    background: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+body.dark input::placeholder {
+    color: #bbb;
+}
+
+
+/* cards também no dark */
+body.dark .card {
+    background: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+body.dark .card p {
+    color: #ddd;
+}
+
+body.dark .card h3 {
+    color: #c6a96b;
+}
+
+
+/* =========================
+   FORM LOGIN/CADASTRO
+========================= */
+body {
+    background: linear-gradient(120deg, #f5f1eb, #e8dfd6);
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.form-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+}
+
+form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #3e2c23;
+}
+
+form input,
+form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+form input:focus,
+form select:focus {
+    border-color: #c6a96b;
+    outline: none;
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+form button[type="submit"] {
+    background: #c6a96b;
+    color: #111;
+}
+
+form button[type="submit"]:hover {
+    background: #a8894f;
+}
+
+.btn-voltar {
+    background: #3e2c23;
+    color: #fff;
+}
+
+.btn-voltar:hover {
+    background: #6b4f3a;
+}
+
+/* =========================
+   DASHBOARD BOTÕES
+========================= */
+.dashboard, .container, main {
+    text-align: center;
+}
+
+button,
+a.button,
+input[type="submit"] {
+    display: inline-block;
+    padding: 10px 16px;
+    margin: 6px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+button, input[type="submit"] {
+    background: #3e2c23;
+    color: white;
+}
+
+button:hover,
+a.button:hover,
+input[type="submit"]:hover {
+    opacity: 0.85;
+    transform: scale(1.03);
+}
+
+a {
+    display: inline-block;
+    padding: 10px 16px;
+    margin: 6px;
+    background: #3e2c23;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+a:hover {
+    opacity: 0.85;
+    transform: scale(1.03);
+}
+
+a[href*="excluir"], button.excluir {
+    background: #b00020 !important;
+}
+
+a[href*="logout"], a[href*="sair"] {
+    background: #444 !important;
+}
+
+
+/* BOTÃO FORÇADO */
+.card a.btn {
+    display: inline-block !important;
+    margin: 12px !important;
+    padding: 10px !important;
+    border-radius: 25px !important;
+    background: linear-gradient(135deg, #3e2c23, #6b4a3a) !important;
+    color: white !important;
+    font-size: 13px !important;
+    font-weight: bold !important;
+}
+.buscar-card {
+    max-width: 900px;
+    margin: 60px auto;
+    background: #ffffff;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+    animation: aparecer 0.6s ease;
+}
+
+/* ANIMAÇÃO SUAVE */
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🖼️ IMAGEM TOP (COM GRADIENTE) */
+.buscar-card img {
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.9);
+}
+
+/* CONTEÚDO */
+.buscar-card h3 {
+    font-size: 34px;
+    margin: 30px 30px 15px 30px;
+    color: #1e1e1e;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+/* TEXTO MAIS ELEGANTE */
+.buscar-card p {
+    font-size: 18px;
+    margin: 0 30px 25px 30px;
+    color: #444;
+    line-height: 1.9;
+    text-align: justify;
+}
+
+/* AUTOR DESTACADO */
+.buscar-card small {
+    display: block;
+    margin: 0 30px 30px 30px;
+    color: #777;
+    font-size: 14px;
+    font-style: italic;
+}
+
+/* LINHA DIVISÓRIA BONITA */
+.buscar-card small::before {
+    content: "Autor ";
+    color: #b89b72;
+}
+
+/* HOVER SUAVE */
+.buscar-card:hover {
+    transform: scale(1.01);
+    transition: 0.3s;
+}
